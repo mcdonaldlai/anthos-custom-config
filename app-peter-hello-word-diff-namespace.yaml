@@ -1,0 +1,38 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: peter-hello-world-diff-namespace
+  namespace: hello-world
+  labels:
+    app: peter-hello-world-diff-namespace
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: peter-hello-world-diff-namespace
+  template:
+    metadata:
+      labels:
+        app: peter-hello-world-diff-namespace
+    spec:
+      containers:
+        - name: peter-hello-world-diff-namespace
+          image: "asia-east2-docker.pkg.dev/prj-donald-testing/hello-world-applications/hello-world-vite:latest"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: peter-hello-world-diff-namespace
+  name: peter-hello-world-diff-namespace
+  namespace: hello-world
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: peter-hello-world-diff-namespace
+  type: LoadBalancer
+---

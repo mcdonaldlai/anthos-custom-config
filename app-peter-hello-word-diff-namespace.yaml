@@ -20,7 +20,6 @@ spec:
         - name: peter-hello-world-diff-namespace
           image: "asia-east2-docker.pkg.dev/prj-donald-testing/hello-world-applications/hello-world-vite:latest"
           securityContext:
-            runAsUser: 1000
             allowPrivilegeEscalation: false
 ---
 apiVersion: v1

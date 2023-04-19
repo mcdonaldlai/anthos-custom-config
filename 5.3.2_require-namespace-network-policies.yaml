@@ -55,4 +55,3 @@ spec:
       - capi-kubeadm-bootstrap-system
       - gke-system
       - anthos-identity-service
-      - hello-world

@@ -4,6 +4,8 @@ metadata:
   name: deny-all-ingress
   namespace: hello-world
 spec:
+  ingress:
+  - {}
   podSelector: {}
   policyTypes:
   - Ingress

@@ -1,0 +1,12 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: custom-role-binding-custom-role-hello-world-namespace
+  namespace: hello-world
+subjects:
+- kind: Group
+  name: dl-anthos-testing-lab-readonly@hkmci.com
+roleRef:
+  kind: ClusterRole
+  name: custom-role-hello-world-namespace
+  apiGroup: rbac.authorization.k8s.io

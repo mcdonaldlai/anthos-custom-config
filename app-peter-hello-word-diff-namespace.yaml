@@ -38,7 +38,7 @@ spec:
     app: peter-hello-world-diff-namespace
   type: LoadBalancer
 ---
-apiVersion: autoscaling/v2beta2
+apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
   name: peter-hello-world-diff-namespace

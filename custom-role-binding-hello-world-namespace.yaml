@@ -6,6 +6,7 @@ metadata:
 subjects:
 - kind: Group
   name: dl-anthos-testing-lab-readonly@hkmci.com
+  apiGroup: rbac.authorization.k8s.io
 roleRef:
   kind: Role
   name: custom-role-hello-world-namespace

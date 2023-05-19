@@ -38,3 +38,22 @@ spec:
     app: peter-hello-world-diff-namespace
   type: LoadBalancer
 ---
+apiVersion: autoscaling/v2beta1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: peter-hello-world-diff-namespace
+  namespace: hello-world
+  labels:
+    app: peter-hello-world-diff-namespace
+spec:
+  scaleTargetRef:
+    kind: Deployment
+    name: peter-hello-world-diff-namespace
+    apiVersion: apps/v1
+  minReplicas: 1
+  maxReplicas: 5
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        targetAverageUtilization: 1

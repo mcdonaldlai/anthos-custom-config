@@ -7,6 +7,6 @@ subjects:
 - kind: Group
   name: dl-anthos-testing-lab-readonly@hkmci.com
 roleRef:
-  kind: ClusterRole
+  kind: Role
   name: custom-role-hello-world-namespace
   apiGroup: rbac.authorization.k8s.io
